@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Thing : MonoBehaviour {
 	
@@ -14,11 +15,14 @@ public class Thing : MonoBehaviour {
 
 	//universal timers
 	//put those here. don't know if we need this but here it is
+
+    public List<GameObject> attachedLimbs;
 	
 	// Use this for initialization
 	protected virtual void Start () {
 		animator = this.GetComponent<Animator>();
 		rb = this.GetComponent<Rigidbody>();
+		attachedLimbs = new List<GameObject>();
 	}
 	
 	// Update is called once per frame

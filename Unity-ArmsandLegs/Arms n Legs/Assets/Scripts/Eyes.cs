@@ -16,11 +16,12 @@ public class Eyes : Thing {
 	
     protected override void Update () {
 		base.Update();
-		if (tHop < Time.time)
-		{
-			changeState(STATE_HOP);
-			StartCoroutine(hopMovement());
-			tHop = Time.time + Random.Range(2f, 4f);
+		if(attachedLimbs.Count == 0){
+			if (tHop < Time.time)
+			{
+				changeState(STATE_HOP);
+				tHop = Time.time + Random.Range(2f, 4f);
+			}
 		}
 	}
 
@@ -49,7 +50,7 @@ public class Eyes : Thing {
 		for(float i = 0f; i < 1f; i += .1f)
 		{
 			transform.position = Vector3.Lerp(start, end, i);
-			yield return new WaitForSeconds(.05f);
+			yield return new WaitForSeconds(.025f);
 		}
 	}
 }

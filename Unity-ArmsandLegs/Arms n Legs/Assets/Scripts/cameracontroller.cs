@@ -5,8 +5,9 @@ public class cameracontroller : MonoBehaviour {
 
 	public GameObject[] targets;
 	int currentTarget = 0;
-	private Vector3 offset;
-	
+	Vector3 offset;
+	bool flying = false;
+    Coroutine flyingCoroutine;
 	
 	void Start () {
 		targets = new GameObject[4];
@@ -16,27 +17,40 @@ public class cameracontroller : MonoBehaviour {
 		targets[3] = GameObject.Find("AllEyes/Eyes4");
 		offset = transform.position;
 	}
+
+	void Update(){
+		if(flying == false)
+		{
+			if (Input.GetKeyDown("q"))
+			{
+			    switchTarget((currentTarget == 0)
+							 ? (targets.Length-1)
+							 : (currentTarget-1));
+			}
+			else if (Input.GetKeyDown("e"))
+			{
+			    switchTarget((currentTarget+1) % targets.Length);
+			}
+		}
+	}
 	
 	void LateUpdate () {
-		if (Input.GetKeyDown("q"))
+		if(flying == false)
 		{
-			switchTarget((currentTarget == 0) ? (targets.Length-1) : (currentTarget-1));
+			transform.position = targets[currentTarget].transform.position + offset;
 		}
-		else if (Input.GetKeyDown("e"))
-		{
-			switchTarget((currentTarget+1) % targets.Length);
-		}
-		
-		transform.position = targets[currentTarget].transform.position + offset;
 	}
 
 	void switchTarget(int newTarget){
-		currentTarget = newTarget;
+		flyingCoroutine = StartCoroutine(flyToTarget(newTarget));
 	}
 
 	IEnumerator flyToTarget(int newTarget){
+		flying = true;
+		int oldTarget = newTarget;
+		currentTarget = newTarget;
 	    float startTime = Time.time;
-		Vector3 t1 = targets[currentTarget].transform.position;
+		Vector3 t1 = targets[oldTarget].transform.position;
 		Vector3 t2 = targets[newTarget].transform.position;
 		float distance = Vector3.Distance(t1, t2);
 		float trimmedDistance = distance;
@@ -46,10 +60,18 @@ public class cameracontroller : MonoBehaviour {
 		else if(trimmedDistance < minDistance) trimmedDistance = minDistance;
 		float additionalTime = map(trimmedDistance, minDistance, maxDistance, 1f, 3f);
 		float endTime = startTime + additionalTime;
+		Vector3 startPosition = transform.position;
+		Vector3 endPosition = targets[newTarget].transform.position + offset;
 		while(Time.time < endTime)
 		{
+			float p = (Time.time - startTime) / (endTime - startTime);
+			p = p*p * (3f - 2f*p);
+			p = p*p * (3f - 2f*p);
+			p = p*p * (3f - 2f*p);
+			transform.position = Vector3.Lerp(startPosition, endPosition, p);
 			yield return 0;
 		}
+		flying = false;
 	}
 
 	float map(float x, float a1, float a2, float b1, float b2){
