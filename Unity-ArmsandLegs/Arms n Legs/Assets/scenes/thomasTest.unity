@@ -293,6 +293,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1417743286}
   m_RootOrder: 0
+<<<<<<< HEAD:Unity-ArmsandLegs/Arms n Legs/Assets/jointtest.unity
+=======
+--- !u!1 &340520776 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 103046, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+  m_PrefabInternal: {fileID: 888386994}
+>>>>>>> origin/master:Unity-ArmsandLegs/Arms n Legs/Assets/scenes/thomasTest.unity
 --- !u!1 &379469387
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +802,25 @@ Transform:
   - {fileID: 2126883489}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+<<<<<<< HEAD:Unity-ArmsandLegs/Arms n Legs/Assets/jointtest.unity
+=======
+--- !u!1 &863200741 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190022, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+  m_PrefabInternal: {fileID: 888386994}
+--- !u!65 &863200746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 863200741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: .5, z: .300000012}
+  m_Center: {x: 0, y: .25, z: 0}
+>>>>>>> origin/master:Unity-ArmsandLegs/Arms n Legs/Assets/scenes/thomasTest.unity
 --- !u!1 &878338895
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +888,34 @@ Prefab:
     - target: {fileID: 491774, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476682, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.00100000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 13632708, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457946, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103046, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 190022, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150346, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150908, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
@@ -982,6 +1036,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1417743286}
   m_RootOrder: 1
+<<<<<<< HEAD:Unity-ArmsandLegs/Arms n Legs/Assets/jointtest.unity
+=======
+--- !u!1 &1115541288 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 150346, guid: ffe6566d761a32c4c8be2982e0ec1980, type: 2}
+  m_PrefabInternal: {fileID: 888386994}
+--- !u!65 &1115541293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115541288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: .5, z: 6.1232336e-17}
+  m_Center: {x: 0, y: .25, z: 0}
+>>>>>>> origin/master:Unity-ArmsandLegs/Arms n Legs/Assets/scenes/thomasTest.unity
 --- !u!1 &1115556624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1323,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1155200751}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Unity-ArmsandLegs/Arms n Legs/Assets/jointtest.unity
   m_Script: {fileID: 11500000, guid: 62c56f93be7ab4447a99d993e391c31a, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 9dff94c69645e8f4792c62f78e79ca96, type: 3}
+>>>>>>> origin/master:Unity-ArmsandLegs/Arms n Legs/Assets/scenes/thomasTest.unity
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
