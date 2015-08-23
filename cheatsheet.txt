@@ -63,5 +63,6 @@ $ git merge [name_of_branch_to_merge]
 $ git push origin develop
 
 //now you can delete that other branch, the one just merged with develop
-
+$ git branch -d [name_of_your_branch]
+$ git push origin :[name_of_your_branch]
 
