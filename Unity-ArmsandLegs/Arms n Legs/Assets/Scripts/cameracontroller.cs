@@ -7,7 +7,7 @@ public class cameracontroller : MonoBehaviour {
 	int currentTarget = 0;
 	Vector3 offset;
 	bool flying = false;
-    Coroutine flyingCoroutine;
+    Coroutine flyingCoroutine = null;
 	
 	void Start () {
 		targets = new GameObject[4];
@@ -19,18 +19,15 @@ public class cameracontroller : MonoBehaviour {
 	}
 
 	void Update(){
-		if(flying == false)
+		if (Input.GetKeyDown("q"))
 		{
-			if (Input.GetKeyDown("q"))
-			{
-			    switchTarget((currentTarget == 0)
-							 ? (targets.Length-1)
-							 : (currentTarget-1));
-			}
-			else if (Input.GetKeyDown("e"))
-			{
-			    switchTarget((currentTarget+1) % targets.Length);
-			}
+			switchTarget((currentTarget == 0)
+						 ? (targets.Length-1)
+						 : (currentTarget-1));
+		}
+		else if (Input.GetKeyDown("e"))
+		{
+			switchTarget((currentTarget+1) % targets.Length);
 		}
 	}
 	
@@ -42,7 +39,15 @@ public class cameracontroller : MonoBehaviour {
 	}
 
 	void switchTarget(int newTarget){
-		flyingCoroutine = StartCoroutine(flyToTarget(newTarget));
+		if(flyingCoroutine == null)
+		{
+			flyingCoroutine = StartCoroutine(flyToTarget(newTarget));
+		}
+		else
+		{
+			StopCoroutine(flyingCoroutine);
+			flyingCoroutine = StartCoroutine(flyToTarget(newTarget));
+		}
 	}
 
 	IEnumerator flyToTarget(int newTarget){
@@ -72,6 +77,7 @@ public class cameracontroller : MonoBehaviour {
 			yield return 0;
 		}
 		flying = false;
+		flyingCoroutine = null;
 	}
 
 	float map(float x, float a1, float a2, float b1, float b2){
