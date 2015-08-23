@@ -5,15 +5,16 @@ public class sticky : MonoBehaviour {
 
 public bool jointCollided = false;
 public GameObject rigidBodysource;
+public GameObject rootTransform;
 
 void OnTriggerEnter(Collider other) {
 		  if(other.GetComponent<Collider>().tag == "Stickable")
 			 {
 				print("Stickable");
-				rigidBodysource.GetComponent<Rigidbody>().isKinematic = true;
-				jointCollided = true; // stop physics
+				Destroy (rigidBodysource.GetComponent<Rigidbody>());
+				rootTransform.transform.parent = other.transform;
+				jointCollided = true;
 			 }
 	}
 }
 
-//transform.parent = other.transform; // doesn't move yet, but will move w/what it hit
