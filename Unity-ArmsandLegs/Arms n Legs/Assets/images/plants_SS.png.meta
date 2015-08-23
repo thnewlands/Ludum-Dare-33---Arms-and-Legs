@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 55bf983d6eed84a329ba7aca81d5a862
+timeCreated: 1440299557
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: plants_SS_0
+    21300002: plants_SS_1
+    21300004: plants_SS_2
+    21300006: plants_SS_3
+    21300008: plants_SS_4
+    21300010: plants_SS_5
+    21300012: plants_SS_6
+    21300014: plants_SS_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: plants_SS_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 344
+        width: 335
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 346
+        width: 78
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_2
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 344
+        width: 77
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_3
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 337
+        width: 143
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 89
+        width: 220
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_5
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 90
+        width: 150
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_6
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 68
+        width: 222
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plants_SS_7
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 75
+        width: 169
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

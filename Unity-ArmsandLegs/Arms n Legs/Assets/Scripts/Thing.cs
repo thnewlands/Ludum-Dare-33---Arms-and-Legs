@@ -9,6 +9,7 @@ public class Thing : MonoBehaviour {
 
 	//states all Things have
 	const int STATE_IDLE = 0;
+	const int STATE_WPAL = 1;
 
 	protected string _currentDirection = "left";
 	protected int _currentAnimationState = STATE_IDLE;
@@ -29,6 +30,14 @@ public class Thing : MonoBehaviour {
 	protected virtual void Update () {
 	    //default behaviours go in here
 		//probably code for sticking arms&legs on to things would go in here
+		if(attachedLimbs.Count == 4)
+		{
+			changeState(STATE_WPAL);
+		}
+		if(Input.GetKeyDown("space") && _currentAnimationState == STATE_WPAL)
+		{
+			//eject limbs, arms and legs shoot off in different directions
+		}
 	}
 
     protected virtual void changeState(int state){
@@ -38,6 +47,11 @@ public class Thing : MonoBehaviour {
 			case STATE_IDLE:
 			{
 				animator.SetInteger("state", STATE_IDLE);
+				break;
+			}
+			case STATE_WPAL:
+			{
+				animator.SetInteger("state", STATE_WPAL);
 				break;
 			}
 		    default:

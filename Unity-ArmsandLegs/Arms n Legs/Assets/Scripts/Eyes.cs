@@ -4,7 +4,7 @@ using System.Collections;
 public class Eyes : Thing {
 	
 	//additional states not held by base
-	const int STATE_HOP = 1;
+	const int STATE_HOP = 10;
 	
     //timers
 	float tHop = 0;
@@ -44,9 +44,9 @@ public class Eyes : Thing {
 
 	IEnumerator hopMovement(){
 		Vector3 start = transform.position;
-		Vector3 end = new Vector3(transform.position.x + Random.Range(-5, 5),
+		Vector3 end = new Vector3(transform.position.x + Random.Range(-3, 3),
 								  transform.position.y,
-								  transform.position.z + Random.Range(-5, 5));
+								  transform.position.z + Random.Range(-3, 3));
 		for(float i = 0f; i < 1f; i += .1f)
 		{
 			transform.position = Vector3.Lerp(start, end, i);
