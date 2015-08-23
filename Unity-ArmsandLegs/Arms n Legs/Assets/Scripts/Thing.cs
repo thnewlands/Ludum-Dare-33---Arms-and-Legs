@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Thing : MonoBehaviour {
-	
+
+	public Camera camera;
 	public Animator animator;
 	public Rigidbody rb;
 
@@ -21,6 +22,7 @@ public class Thing : MonoBehaviour {
 	
 	// Use this for initialization
 	protected virtual void Start () {
+		camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 		animator = this.GetComponent<Animator>();
 		rb = this.GetComponent<Rigidbody>();
 		attachedLimbs = new List<GameObject>();
@@ -38,6 +40,9 @@ public class Thing : MonoBehaviour {
 		{
 			//eject limbs, arms and legs shoot off in different directions
 		}
+
+		transform.LookAt(transform.position + camera.transform.rotation * Vector3.back,
+						 camera.transform.rotation * Vector3.up);
 	}
 
     protected virtual void changeState(int state){
