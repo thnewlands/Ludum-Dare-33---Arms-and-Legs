@@ -53,6 +53,9 @@ $ git checkout -b [name_of_your_new_branch] develop
 $ git add .
 $ git commit -m "commit message"
 
+//gotta do this too
+$ git push origin [name_of_branch]
+
 //switch back to develop branch
 $ git checkout develop
 
