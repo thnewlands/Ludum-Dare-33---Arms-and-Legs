@@ -6,6 +6,8 @@ Gain total control of prop with four
 x Camera follows limbs
 Switch control of limbs 
 
+Make colliders for 2d sprites compatible with 3d.
+
 Art 
 Things to attach to
 Animations when they're fully attached to
