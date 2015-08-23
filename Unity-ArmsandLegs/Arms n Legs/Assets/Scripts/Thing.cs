@@ -8,8 +8,8 @@ public class Thing : MonoBehaviour {
 	public Rigidbody rb;
 
 	//states all Things have
-	const int STATE_IDLE = 0;
-	const int STATE_WPAL = 1;
+	protected const int STATE_IDLE = 0;
+	protected const int STATE_WPAL = 1;
 
 	protected string _currentDirection = "left";
 	protected int _currentAnimationState = STATE_IDLE;
