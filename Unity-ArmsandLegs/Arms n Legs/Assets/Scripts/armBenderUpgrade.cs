@@ -15,10 +15,10 @@ using UnityEngine;
      // Update is called once per frame
      void Update () {
          
-         //Rotate X view
+		 //Rotate Y view
          yRotate += Input.GetAxis ("Horizontal") * RotationSensitivity * Time.deltaTime;
          yRotate = Mathf.Clamp (yRotate, minAngle, maxAngle);
-         transform.eulerAngles = new Vector3 (yRotate, 0.0f, 0.0f);
+         transform.eulerAngles = new Vector3 (0.0f, yRotate, 0.0f);
 		 
 		 //Rotate Z view
          zRotate += Input.GetAxis ("Vertical") * RotationSensitivity * Time.deltaTime;
