@@ -31,3 +31,37 @@ $ git branch -D [name_of_your_new_branch]
 
 Delete the branch on github :
 $ git push origin :[name_of_your_new_branch]
+
+**********
+Setting your branch to exactly match the remote branch can be done in two steps:
+
+git fetch origin
+git reset --hard origin/master
+If you want to save your current branch's state before doing this (just in case), you can do:
+
+git commit -a -m "Saving my work, just in case"
+git branch my-saved-work
+**********
+
+//alright this is the workflow
+
+//first, make a new branch off of develop
+$ git checkout -b [name_of_your_new_branch] develop
+//this also switchs to the branch you just made
+
+//make changes and commit them
+$ git add .
+$ git commit -m "commit message"
+
+//switch back to develop branch
+$ git checkout develop
+
+//now merge changes on new branch with develop
+$ git merge [name_of_branch_to_merge]
+
+//push this to origin (so you can see it online and not just on your local system)
+$ git push origin develop
+
+//now you can delete that other branch, the one just merged with develop
+
+
