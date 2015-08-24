@@ -4,14 +4,18 @@ using System.Collections;
 public class simpleCameraFollow : MonoBehaviour {
 
 	public GameObject player;
-	private Vector3 offset;
+	private Vector3 offsetP;
+	private Vector3 offsetR;
 	// Use this for initialization
 	void Start () {
-		offset = transform.position;
+		offsetP = transform.position;
+		offsetR = transform.eulerAngles;
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = player.transform.position + offset;
+		//float rotator = player.transform.eulerAngles.x + offsetR;
+		transform.position = player.transform.position + offsetP;
+		transform.eulerAngles = player.transform.position + offsetR;
 	}
 }
