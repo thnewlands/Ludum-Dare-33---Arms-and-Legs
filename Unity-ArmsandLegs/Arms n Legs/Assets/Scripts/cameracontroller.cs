@@ -9,7 +9,7 @@ public class cameracontroller : MonoBehaviour {
 	bool flying = false;
     Coroutine flyingCoroutine = null;
 	float rotation = 0; //in radians
-	public float rotationSensitivity = 0.01f;
+    float rotationSensitivity = 0.05f;
 	float cameraHeight = 10;
 	Vector3 startOffset; //for rotation stuff
 	float rotationRadius = 10;
@@ -22,11 +22,10 @@ public class cameracontroller : MonoBehaviour {
 		targets[2] = GameObject.Find("AllEyes/Eyes3");
 		targets[3] = GameObject.Find("AllEyes/Eyes4");
 		*/
-		print(transform.position - targets[1].transform.position);
+		Screen.lockCursor = true;
+	    Cursor.visible = false;
 		offset = new Vector3(10, cameraHeight, 0);
 	    startOffset = new Vector3(10, cameraHeight, 0);
-		print(transform.position);
-		print(targets[0].transform.position);
 	}
 
 	void Update(){
@@ -41,7 +40,7 @@ public class cameracontroller : MonoBehaviour {
 			switchTarget((currentTarget+1) % targets.Length);
 		}
 
-		if(false)//!flying)
+		if(!flying)
 		{
 			float additionalRotation = Input.GetAxis("Mouse X") * rotationSensitivity;
 			rotation += additionalRotation;
@@ -114,13 +113,13 @@ public class cameracontroller : MonoBehaviour {
 		{
 			newOffsetX = possibleOffsetX1;
 			newOffsetZ = possibleOffsetZ1;
+			rotation = possibleDestinationRotationAngle1;
 		}
 		else
 		{
 			newOffsetX = possibleOffsetX2;
 			newOffsetZ = possibleOffsetZ2;
-			print(distance1 + " was greater than " + distance2 + ", so newOffset was set to ("
-				  + newOffsetX + ", " + newOffsetZ + ")");
+			rotation = possibleDestinationRotationAngle2;
 		}
 		endPosition.x = targets[newTarget].transform.position.x + newOffsetX;
 		endPosition.y = targets[newTarget].transform.position.y + cameraHeight;

@@ -41,8 +41,10 @@ public class Thing : MonoBehaviour {
 			//eject limbs, arms and legs shoot off in different directions
 		}
 
-		transform.LookAt(transform.position + camera.transform.rotation * Vector3.back,
-						 camera.transform.rotation * Vector3.up);
+		Vector3 lookPos = camera.transform.position - transform.position;
+		lookPos.y = 0;
+		Quaternion rotation = Quaternion.LookRotation(lookPos);
+		transform.rotation = rotation;
 	}
 
     protected virtual void changeState(int state){
