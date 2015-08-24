@@ -69,3 +69,4 @@ $ git push origin develop
 $ git branch -d [name_of_your_branch]
 $ git push origin :[name_of_your_branch]
 
+word
