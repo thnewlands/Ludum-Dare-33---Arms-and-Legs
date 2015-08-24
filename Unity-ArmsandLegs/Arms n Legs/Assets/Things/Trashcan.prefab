@@ -10,8 +10,7 @@ GameObject:
   - 4: {fileID: 417706}
   - 212: {fileID: 21256368}
   - 95: {fileID: 9598542}
-  - 54: {fileID: 5408634}
-  - 114: {fileID: 11487608}
+  - 114: {fileID: 11406336}
   m_Layer: 0
   m_Name: Trashcan
   m_TagString: Untagged
@@ -63,7 +62,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11487608
+--- !u!114 &11406336
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -74,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1926b8854af74952adf166c62bad8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
   attachedLimbs: []
