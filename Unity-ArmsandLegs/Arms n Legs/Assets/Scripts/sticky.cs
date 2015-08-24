@@ -8,6 +8,15 @@ public GameObject rootTransform;
 public bool jointCollided = false;
 public float gracePeriodTimer = 0f;
 
+public AudioSource connectAudio;
+public AudioSource disconnectAudio;
+
+ void Start() {
+     AudioSource[] audios = GetComponents<AudioSource>();
+     connectAudio = audios[0];
+     disconnectAudio = audios[1];
+ }
+
 void OnTriggerEnter(Collider other) {
 	if(gracePeriodTimer < Time.time && jointCollided == false){
 		if(other.GetComponent<Collider>().tag == "Stickable"){
@@ -15,6 +24,7 @@ void OnTriggerEnter(Collider other) {
 				Destroy (rigidBodysource.GetComponent<Rigidbody>());
 				rootTransform.transform.parent = other.transform;
 				jointCollided = true;
+				connectAudio.Play();
 		}
 	}
 }
@@ -26,6 +36,7 @@ void Update() {
 			rootTransform.transform.parent = rootTransform.transform.parent;
 			jointCollided = false;
 			gracePeriodTimer = Time.time + 3f;
+			disconnectAudio.Play();
 		}
 	}
 }
