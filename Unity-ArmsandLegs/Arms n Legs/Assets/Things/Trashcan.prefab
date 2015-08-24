@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21256368}
   - 95: {fileID: 9598542}
   - 114: {fileID: 11406336}
+  - 54: {fileID: 5408634}
   m_Layer: 0
   m_Name: Trashcan
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_RootOrder: 0
 --- !u!54 &5408634
 Rigidbody:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180794}
