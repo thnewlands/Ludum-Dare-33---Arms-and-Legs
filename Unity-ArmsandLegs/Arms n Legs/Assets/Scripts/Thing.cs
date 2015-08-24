@@ -18,33 +18,36 @@ public class Thing : MonoBehaviour {
 	//universal timers
 	//put those here. don't know if we need this but here it is
 
-    public List<GameObject> attachedLimbs;
+	protected bool hasChild = false;
 	
 	// Use this for initialization
 	protected virtual void Start () {
 		camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 		animator = this.GetComponent<Animator>();
 		rb = this.GetComponent<Rigidbody>();
-		attachedLimbs = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-	    //default behaviours go in here
-		//probably code for sticking arms&legs on to things would go in here
-		if(attachedLimbs.Count == 4)
+	    if(transform.childCount > 0)
 		{
+			hasChild = true;
 			changeState(STATE_WPAL);
 		}
-		if(Input.GetKeyDown("space") && _currentAnimationState == STATE_WPAL)
+
+		if(transform.childCount == 0 && _currentAnimationState != STATE_IDLE)
 		{
-			//eject limbs, arms and legs shoot off in different directions
+			hasChild = false;
+			changeState(STATE_IDLE);
 		}
 
-		Vector3 lookPos = camera.transform.position - transform.position;
-		lookPos.y = 0;
-		Quaternion rotation = Quaternion.LookRotation(lookPos);
-		transform.rotation = rotation;
+		if(!hasChild)
+		{
+			Vector3 lookPos = camera.transform.position - transform.position;
+			lookPos.y = 0;
+			Quaternion rotation = Quaternion.LookRotation(lookPos);
+			transform.rotation = rotation;
+		}
 	}
 
     protected virtual void changeState(int state){
@@ -53,6 +56,7 @@ public class Thing : MonoBehaviour {
 		switch(state){
 			case STATE_IDLE:
 			{
+				print("got here");
 				animator.SetInteger("state", STATE_IDLE);
 				break;
 			}

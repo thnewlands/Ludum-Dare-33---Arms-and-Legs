@@ -17,9 +17,7 @@ public class Floatingdog : Thing {
 	
     protected override void Update () {
 		base.Update();
-		if(attachedLimbs.Count == 0){
-		}
-
+    
 		if(tMove < Time.time)
 		{
 			tMove += 10;

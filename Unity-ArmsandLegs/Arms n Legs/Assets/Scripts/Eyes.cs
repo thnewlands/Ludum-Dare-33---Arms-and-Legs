@@ -16,7 +16,7 @@ public class Eyes : Thing {
 	
     protected override void Update () {
 		base.Update();
-		if(attachedLimbs.Count == 0){
+		if(hasChild == false){
 			if (tHop < Time.time)
 			{
 				changeState(STATE_HOP);
