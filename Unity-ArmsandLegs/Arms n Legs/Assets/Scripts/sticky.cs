@@ -9,7 +9,7 @@ public bool jointCollided = false;
 public float gracePeriodTimer = 0f;
 
 void OnTriggerEnter(Collider other) {
-	if(gracePeriodTimer < Time.time){
+	if(gracePeriodTimer < Time.time && jointCollided == false){
 		if(other.GetComponent<Collider>().tag == "Stickable"){
 				print("Stickable");
 				Destroy (rigidBodysource.GetComponent<Rigidbody>());
