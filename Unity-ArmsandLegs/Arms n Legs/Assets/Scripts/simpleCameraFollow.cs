@@ -8,8 +8,7 @@ public class simpleCameraFollow : MonoBehaviour {
 	private Vector3 offsetR;
 	// Use this for initialization
 	void Start () {
-		offsetP = transform.position;
-		offsetR = transform.eulerAngles;
+		offsetP = transform.position - player.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -17,5 +16,7 @@ public class simpleCameraFollow : MonoBehaviour {
 		//float rotator = player.transform.eulerAngles.x + offsetR;
 		transform.position = player.transform.position + offsetP;
 		transform.eulerAngles = player.transform.position + offsetR;
+
+		transform.LookAt(player.transform.position);
 	}
 }

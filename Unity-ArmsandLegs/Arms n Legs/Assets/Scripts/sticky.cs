@@ -20,7 +20,7 @@ void OnTriggerEnter(Collider other) {
 }
 
 void Update() {
-	if (jointCollided = true){
+	if (jointCollided == true){
 		if (Input.GetKeyDown("space")){
 			rigidBodysource.AddComponent<Rigidbody>();
 			rootTransform.transform.parent = rootTransform.transform.parent;
