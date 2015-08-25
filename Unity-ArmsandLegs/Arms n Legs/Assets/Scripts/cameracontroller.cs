@@ -10,9 +10,9 @@ public class cameracontroller : MonoBehaviour {
     Coroutine flyingCoroutine = null;
 	float rotation = 0; //in radians
     float rotationSensitivity = 0.05f;
-	float cameraHeight = 10;
+	float cameraHeight = 15;
 	Vector3 startOffset; //for rotation stuff
-	float rotationRadius = 10;
+	float rotationRadius = 15;
 	
 	void Start () {
 		/*
